@@ -1,0 +1,8 @@
+= render partial: 'layouts/head'
+= render partial: 'layouts/header'
+  
+%body
+  .container
+    = yield
+
+  = render partial: 'layouts/footer'
