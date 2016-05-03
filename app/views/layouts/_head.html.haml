@@ -1,7 +1,12 @@
 !!!5
 %html
   %head
-    %title Carefree Used Boats
-    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
-    = csrf_meta_tags
+  %meta{charset: "utf-8"}
+  %meta{name: "ROBOTS", content: "NOODP"}
+  %meta{name: "viewport", content: "initial-scale=1"}
+  / Configure default and controller-, and view-specific titles in
+  /   config/locales/en.yml. For more see:
+  /   https://github.com/calebthompson/title#usage
+  %title Carefree Boat Trader
+  = stylesheet_link_tag :application, media: "all"
+  = csrf_meta_tags

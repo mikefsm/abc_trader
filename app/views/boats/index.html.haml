@@ -1,0 +1,68 @@
+.row
+  .clearfix
+    .pull-left
+      %h3 Boats
+    .pull-right 
+      = link_to 'Add Boat', new_boat_path, class: 'btn btn-default'
+
+
+- if @boats.any?
+  - @boats.each do |boat|
+    .row.boat-index
+      .col-lg-10.col-lg-offset-1.col-md-10.col-md-offset-1.boat-profile
+        .panel.panel-default
+          .panel-body
+            .thumnail.col-md-4
+              = image_tag 'featured1.jpg', class: 'img-responsive boat-thumbnail'
+              = link_to 'View More', boat_path(boat), class: 'btn btn-default col-lg-12'
+              = link_to 'Edit', edit_boat_path(boat)
+            .col-md-8
+              .clearfix
+                .pull-left
+                  %h4
+                    = boat.boat_name
+                    %br
+                    %small= boat.boat_make + " " + boat.boat_model
+                .pull-right
+                  %h4= humanized_money_with_symbol boat.price
+              %p= boat.tagline
+              %hr
+              .col-md-3
+                %p.text-right Fuel Type:
+                %p.text-right Condition: 
+                %p.text-right Hull:
+                %p.text-right Engine Hours:
+                %p.text-right Beam:
+              .col-md-3
+                %p
+                  - if boat.fuel_type
+                    = boat.fuel_type.titleize
+                %p
+                  - if boat.condition
+                    = boat.condition.titleize
+                %p
+                  - if boat.hull
+                    = boat.hull.titleize
+                %p= boat.engine_hours
+                %p= boat.beam
+              .col-md-3
+                %p.text-right Location:
+                %p.text-right Propulsion: 
+                %p.text-right Length:
+                %p.text-right Horsepower:
+              .col-md-3
+                %p
+                  - if boat.fuel_type
+                    = boat.fuel_type.titleize
+                %p
+                  - if boat.condition
+                    = boat.condition.titleize
+                %p
+                  - if boat.hull
+                    = boat.hull.titleize
+                %p= boat.engine_hours
+
+
+
+
+

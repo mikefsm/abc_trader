@@ -1,0 +1,57 @@
+.panel-body
+  .form
+    = form_for(@boat) do |f|
+      .panel.panel-default
+        .panel-heading
+          %h4 Boat Details
+        .panel-body
+          .row
+            .form-group.col-lg-12
+              .control-label= f.label "Name"
+              = f.text_field :boat_name, class: 'form-control'
+              .control-label= f.label "Make"
+              = f.text_field :boat_make, class: 'form-control'
+              .control-label= f.label "Model"
+              = f.text_field :boat_model, class: 'form-control'
+              .control-label= f.label "Category"
+              = select :boat, 'category', Boat.categories.keys, { prompt: 'Please Select' }, { class: 'form-control' } 
+              .control-label= f.label "Year"
+              = f.text_field :boat_model_year, class: 'form-control'
+              .control-label= f.label "Price"
+              = f.text_field :price, class: 'form-control'
+              .control-label= f.label "Fuel Type"
+              = select :boat, 'fuel_type', Boat.fuel_types.keys, { prompt: 'Please Select' }, { class: 'form-control' }
+              .control-label= f.label "Condition"
+              = select :boat, 'condition', Boat.conditions.keys, { prompt: 'Please Select' }, { class: 'form-control' }
+              .control-label= f.label "Lenght"
+              = f.text_field :length, class: 'form-control'
+              .control-label= f.label "Beam"
+              = f.text_field :beam, class: 'form-control'
+              .control-label= f.label "Hull"
+              = select :boat, 'hull', Boat.hulls.keys, { prompt: 'Please Select' }, { class: 'form-control' }
+              .control-label= f.label "Propulsion"
+              = select :boat, 'propulsion', Boat.propulsions.keys, { prompt: 'Please Select' }, { class: 'form-control' }
+              .control-label= f.label "Tagline"
+              = f.text_area :tagline, class: 'form-control'
+              .control-label= f.label "Description"
+              = f.text_area :description, class: 'form-control'
+              
+      .panel.panel-default
+        .panel-heading
+          %h4 Engine Details
+        .panel-body
+          .row
+            .form-group.col-lg-12
+              .control-label= f.label "Make"
+              = f.text_field :engine_make, class: 'form-control'
+              .control-label= f.label "Model"
+              = f.text_field :engine_model, class: 'form-control'
+              .control-label= f.label "Horsepower"
+              = f.text_field :horsepower, class: 'form-control'
+              .control-label= f.label "Year"
+              = f.text_field :engine_year, class: 'form-control'
+              .control-label= f.label "Engine Hours"
+              = f.text_field :engine_hours, class: 'form-control'
+          
+      .submit
+        = submit_tag "Save", class: 'btn btn-default', data: { disable_with: working_msg }

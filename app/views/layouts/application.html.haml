@@ -1,8 +1,10 @@
 = render partial: 'layouts/head'
-= render partial: 'layouts/header'
+= render partial: 'layouts/nav'
   
 %body
   .container
-    = yield
-
+    / = render "flashes"
+    .content
+      = yield
+    / = render "javascript"
   = render partial: 'layouts/footer'
